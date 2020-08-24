@@ -80,7 +80,7 @@ public class Notebook {
                 {
                     OutputConsole.printMenu31();
                     int temp3 = ReadKeyboardConsole.readPointMenu(8);// Read the menu item number 1-8
-                    List<Employee> records = recordManagement.getRecords();//это удалить после переноса sort d
+
                     switch (temp3) {
                         case 1: /**Start the implementation of a functional item 3.1 of the  menu.*/
                         {
@@ -109,9 +109,10 @@ public class Notebook {
                             long id = ReadKeyboardConsole.readIDForDelete();
                             System.out.println(recordManagement.getContact(id));
                             OutputConsole.printFormat7();
-                            if (ReadKeyboardConsole.readPointMenu(2)==2){
-                            recordManagement.deleteRecord(id);}
-                            OutputConsole.printRecordsConsole(records);
+                            if (ReadKeyboardConsole.readPointMenu(2) == 2) {
+                                recordManagement.deleteRecord(id);
+                            }
+                            OutputConsole.printRecordsConsole(recordManagement.getRecords());
                             break;
                         }  /**End the implementation of a functional item 3.4 of the  menu.*/
 
@@ -125,7 +126,7 @@ public class Notebook {
                         }/**End the implementation of a functional item 3.5 of the  menu.*/
                         case 6: /**Start the implementation of a functional item 3.6 of the  menu.*/
                         {
-                           // Collections.sort(records, Employee.NameComparator);
+                            // Collections.sort(records, Employee.NameComparator);
                             OutputConsole.printFormat5();
                             recordManagement.sortingRecordCriterion(Criterion.LAST_NAME);
                             OutputConsole.printRecordsConsole(recordManagement.getRecords());
@@ -134,7 +135,7 @@ public class Notebook {
                         case 7:/**Start the implementation of a functional item 3.7 of the  menu.*/
                         {
                             OutputConsole.printFormat6();
-                           //Collections.sort(records, Employee.YearBirthComparator);
+                            //Collections.sort(records, Employee.YearBirthComparator);
                             recordManagement.sortingRecordCriterion(Criterion.BIRTHDAY);
                             OutputConsole.printRecordsConsole(recordManagement.getRecords());
                             break;
