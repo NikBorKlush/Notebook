@@ -1,6 +1,6 @@
 package com.notebook.dao;
 
-import com.notebook.entity.Criteria;
+import com.notebook.entity.Criterion;
 import com.notebook.entity.Employee;
 
 import java.util.List;
@@ -21,17 +21,17 @@ public interface RecordDAO {
      * Remove records for her ID.
      */
 
-    void deleteContact(Long contactId);
+    void deleteRecord(Long contactId);
 
     /**
      * Get a single contact.
      */
-    Employee getContact(Long contactId);
+    Employee getRecord(Long recordId);
 
     /**
      * Get the list of employees.
      */
-    List<Employee> findRecords();
+    List<Employee> getRecords();
 
     /**
      * Get the list of employees.
@@ -56,6 +56,10 @@ public interface RecordDAO {
     /**
      * Search entries by criterion.
      */
-    List<Employee> findRecordCriterion(Criteria criteria, String value);
+    List<Employee> findRecordCriterion(Criterion criterion, String value);
+    /**
+     * Sorting entries by criterion.
+     */
+    void sortingRecordCriterion(Criterion criterion);
 }
 

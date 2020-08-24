@@ -1,7 +1,7 @@
 package com.notebook.service;
 
 import com.notebook.dao.RecordDAO;
-import com.notebook.entity.Criteria;
+import com.notebook.entity.Criterion;
 import com.notebook.entity.Employee;
 
 import java.util.List;
@@ -11,11 +11,11 @@ import java.util.List;
  *         Notepad records management.
  *         Methods to perform the user commands.
  */
-public class RecordManager {
+public class RecordManagement {
 
-    private RecordDAO dao;
+    private final RecordDAO dao;
 
-    public RecordManager() {
+    public RecordManagement() {
         this.dao = RecordDAOFactory.getContactDAO();
     }
 
@@ -27,17 +27,17 @@ public class RecordManager {
     }
 
     /**
-     * Remove records for her ID.
+     * Remove record for her ID.
      */
-    public void deleteContact(Long contactId) {
-        dao.deleteContact(contactId);
+    public void deleteRecord(Long recordId) {
+        dao.deleteRecord(recordId);
     }
 
     /**
-     * Get a single contact.
+     * Get a single record.
      */
-    public Employee getContact(Long contactId) {
-        return dao.getContact(contactId);
+    public Employee getContact(Long recordId) {
+        return dao.getRecord(recordId);
     }
 
     /**
@@ -57,8 +57,8 @@ public class RecordManager {
     /**
      * Getting all entries.
      */
-    public List<Employee> findRecords() {
-        return dao.findRecords();
+    public List<Employee> getRecords() {
+        return dao.getRecords();
     }
 
     /**
@@ -78,8 +78,14 @@ public class RecordManager {
     /**
      * Search entries by criterion.
      */
-    public List<Employee> findRecordCriterion(Criteria criteria, String value) {
-        return dao.findRecordCriterion(criteria, value);
+    public List<Employee> findRecordCriterion(Criterion criterion, String value) {
+        return dao.findRecordCriterion(criterion, value);
+    }
+    /**
+     * Sorting entries by criterion.
+     */
+    public void sortingRecordCriterion(Criterion criterion) {
+        dao.sortingRecordCriterion (criterion);
     }
 
 }

@@ -33,8 +33,8 @@ public class Manager extends Employee {
      * return the object identifier type  Manager
      */
     @Override
-    public boolean isManager() {
-        return true;
+    public boolean isEmployee() {
+        return false;
     }
 
     /**

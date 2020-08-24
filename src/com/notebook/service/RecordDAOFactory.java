@@ -5,13 +5,13 @@ package com.notebook.service;
  */
 
 import com.notebook.dao.RecordDAO;
-import com.notebook.dao.RecordDAOImpl;
+import com.notebook.dao.ImplementationRecordDAO;
 
 /**
  * Factory to create an instance RecordADO
  */
 public class RecordDAOFactory {
     public static RecordDAO getContactDAO() {
-        return new RecordDAOImpl();
+        return new ImplementationRecordDAO();
     }
 }

@@ -8,7 +8,7 @@ import java.util.List;
  * @author NikBor on 30.05.2016.
  *         The class provides the output to the console menu pages program and print records.
  */
-public class PrintMenuConsole {
+public class OutputConsole {
     public static void printMenuMain() {
         System.out.println("======================================================================================================================================================");
         System.out.println("============ Блокнот сотрудников == Главное меню  === Notebook of workmans == Main page ==============================================================");
@@ -58,11 +58,13 @@ public class PrintMenuConsole {
         System.out.println("Введите номер действия (1-2) и нажмите <Enter>");
     }
 
-    public static void printRecordsConsole(List<Employee> employees) {
+    public static void printRecordsConsole(List<Employee> employees) {employees.forEach(System.out::println);}
+
+  /*  public static void printRecordsConsole(List<Employee> employees) {
         for (Employee v : employees) {
             System.out.println(v);
         }
-    }
+    }*/
 
     public static void printFormat1() {
         System.out.println("=== Просмотр всех записей ============================================================================================================================");
@@ -88,6 +90,9 @@ public class PrintMenuConsole {
         System.out.println("=== Сортировка по году рождения ============================================================================================================================");
     }
 
+    public static void printFormat7() {
+        System.out.println("======Нажмите <2> для удаления== <1> для выхода ============================================================================================================");
+    }
 }
 
 

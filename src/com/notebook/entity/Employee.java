@@ -109,8 +109,8 @@ public class Employee implements Serializable, Comparable<Employee> {
      * @return the object identifier type Employee
      * return the object identifier type Employee
      */
-    public boolean isManager() {
-        return false;
+    public boolean isEmployee() {
+        return true;
     }
 
     /**
@@ -127,6 +127,7 @@ public class Employee implements Serializable, Comparable<Employee> {
         return "[Номер_Id: " + cn + "|" + "Фамилия: " + fn + "|" + " Имя: " + ln + "|" + " Телефон: " + ph + "|" +
                 " Год рождения: " + yearBirth + "]";
     }
+
 
     /**
      * The default comparator.
@@ -164,8 +165,10 @@ public class Employee implements Serializable, Comparable<Employee> {
 
         @Override
         public int compare(Employee r1, Employee r2) {
-            return (int) (r1.getYearBirth() - r2.getYearBirth());
+            return r1.getYearBirth() - r2.getYearBirth();
         }
+
+
     };
 
 }

@@ -2,7 +2,7 @@ package com.notebook;
 
 import com.notebook.entity.Employee;
 import com.notebook.entity.Manager;
-import com.notebook.service.RecordManager;
+import com.notebook.service.RecordManagement;
 
 import java.io.IOException;
 import java.util.List;
@@ -14,8 +14,8 @@ import java.util.List;
  */
 public class LoadInitialData {
 
-    public static void main(String args[]) throws IOException {
-        RecordManager cm = new RecordManager();
+    public static void main(String[] args) throws IOException {
+        RecordManagement cm = new RecordManagement();
         Employee r1 = new Manager("Клюшников", "Николай", "9370271571", 1962, "ОЭТИ");
         Employee r2 = new Employee("Клюшников", "Александр", "715741", 1968);
         Employee r3 = new Manager("Клюшников", "Виктор", "271571", 1969, "ЭВМ");
@@ -33,9 +33,9 @@ public class LoadInitialData {
         cm.addRecord(r6);
         cm.addRecord(r7);
         cm.addRecord(r8);
-        List<Employee> res = cm.findRecords();
+        List<Employee> res = cm.getRecords();
         for (Employee c : res) System.out.println(c);
-        cm.saveRecords(cm.findRecords());
+        cm.saveRecords(cm.getRecords());
     }
 }
 

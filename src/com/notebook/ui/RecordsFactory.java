@@ -21,7 +21,7 @@ public class RecordsFactory {
      * return object Employee or Manager.
      */
     public static Employee readPersonData() throws IOException {
-        String str[] = new String[7];
+        String[] str = new String[7];
         BufferedReader ins = new BufferedReader(new InputStreamReader(System.in));
         str[0] = ReadKeyboardConsole.readCriterion(1);
         str[1] = ReadKeyboardConsole.readCriterion(2);
